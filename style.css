@@ -89,6 +89,8 @@ body {
 .texto .conteudo h1 strong {
   color: var(--amareloPrincipal);
   animation: pulse 1.5s infinite alternate;
+  filter: drop-shadow(3px 3px 3px black);
+
 }
 
 @keyframes pulse {
@@ -133,7 +135,7 @@ body {
 .imagemPrimeiro {
   width: 50%;
   height: 100%;
-
+  filter: drop-shadow(8px 8px 8px rgba(255, 255, 255, 0.925));
   display: flex;
   justify-content: center;
   align-items: center;
@@ -432,7 +434,7 @@ iframe {
   }
 }
 
-@media screen and (min-width: 430px) {
+@media screen and (max-width: 430px) {
   /* Ajustes para telas de celulares */
   .funcionalidade {
     display: none;
@@ -1158,7 +1160,7 @@ iframe {
   flex-wrap: wrap;
   max-width: 100%;
   margin: auto;
-  height: 230px;
+  height: 250px;
 }
 
 .footer {
