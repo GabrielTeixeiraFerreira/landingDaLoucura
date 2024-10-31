@@ -1140,20 +1140,33 @@ iframe {
   }
 }
 
-/* Estilos do Footer */
+/* Estilos do Footer
 .site-footer {
   background-color: var(--cor-secundaria-hover);
   color: #fff;
-  padding: 20px;
+  padding: 10px;
   font-family: Arial, sans-serif;
+}
+
+.site-footer .footer-logo{
+  width: 150px;
+  height: 140px;
+}
+
+.site-footer .footer-khi{
+  width: 100px;
+  height: 130px;
+  margin-left: 40px;
+  margin-bottom: 20px;
 }
 
 .footer-container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  max-width: 1200px;
+  max-width: 100%;
   margin: auto;
+  height: 250px;
 }
 
 .footer-section {
@@ -1166,9 +1179,11 @@ iframe {
   margin-bottom: 10px;
 }
 
+
 .footer-section h3 {
   border-bottom: 2px solid #fff;
   padding-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .footer-section ul {
@@ -1196,4 +1211,101 @@ iframe {
   text-align: center;
   margin-top: 20px;
   font-size: 0.9em;
+} */
+
+
+/* Estilos do Footer */
+.site-footer {
+  background-color: var(--cor-secundaria-hover);
+  color: #fff;
+  padding: 20px 10px;
+  font-family: Arial, sans-serif;
 }
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  padding: 10px;
+}
+
+.site-footer .footer-khi{
+  width: 100px;
+  height: 130px;
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
+.footer-logo {
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+.footer-section h3 {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li a,
+.footer-section a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-section a {
+  margin-right: 10px;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9em;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-section {
+    flex: 1 1 100%;
+    padding: 10px 0;
+  }
+  
+  .site-footer .footer-logo,
+  .site-footer .footer-khi {
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-section h3 {
+    font-size: 1.1em;
+  }
+  
+  .footer-bottom {
+    font-size: 0.8em;
+  }
+}
+
