@@ -316,22 +316,11 @@ body {
   right: -100px;
 }
 
-/* media do bola */
-@media screen and (max-width: 1280px) {
-  .bolaKhiata::before,
-  .bolaKhiata::after {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    background: #faaf544c;
-  }
-}
-
 .contentTMJ {
-  flex-wrap: wrap;
   display: flex;
   justify-content: space-between;
   margin: 6% 10%;
+  z-index: 1;
 
   h2 {
     font-size: 3rem;
@@ -366,27 +355,35 @@ body {
   line-height: 1.8;
   text-align: justify;
   font-size: 20px;
-  z-index: 1;
 }
 
-#saibaMais {
-  font-weight: 600;
-  letter-spacing: 2px;
-  color: var(--cor-fundo);
-  background-color: var(--amareloPrincipal);
-  padding: 10px 20px;
-  border-radius: 5px;
-  margin-top: 15px;
-  text-align: center;
-  position: relative;
-  border: 2px solid var(--cor-fundo);
-}
+/* @media de toda seção de projetos */
+@media screen and (max-width: 1280px) {
+  .bolaKhiata::before,
+  .bolaKhiata::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: #faaf544c;
+  }
 
-#saibaMais:hover {
-  color: var(--cor-secundaria-hover);
-  background-color: var(--amareloHover);
-}
+  .contentTMJ {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10% 0;
+    row-gap: 50px;
+    max-width: 100%;
+  }
 
+  .left {
+    /* min-width: 300px; */
+    max-width: 50%;
+  }
+}
+/* Fim seção projeto */
+
+/* Inicio seção Funcionalidade */
 .phone-screen {
   border-radius: 25px;
   border: 2px solid var(--amareloPrincipal);
@@ -425,9 +422,20 @@ iframe {
 .funcionalidade .texto {
   text-align: center;
   color: var(--cor-fundo);
+  margin-bottom: 6%;  
 
   p {
     color: #d3d2d2;
+  }
+}
+
+@media screen and (min-width: 430px) {
+  /* Ajustes para telas de celulares */
+  .funcionalidade {
+    display: none;
+  }
+  .esconderLinha{
+    display: none;
   }
 }
 
