@@ -1,0 +1,46 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.conteudo{
+    width: 70vw;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.seta{
+    width: 100%;
+}
+
+.comprador, .costureiro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2vw;
+}
+
+.comprador p, .costureiro p, .enviar{
+    font-size: 1.8vw;
+}
+
+.enviar{
+    text-align: center;
+    background-color: #f6c44e;
+    position: relative;
+    left: 100%;
+    text-decoration: none;
+    border: 1px solid bisque;
+    border-radius: 20px;
+    padding: 10px;
+    color: white;
+}
