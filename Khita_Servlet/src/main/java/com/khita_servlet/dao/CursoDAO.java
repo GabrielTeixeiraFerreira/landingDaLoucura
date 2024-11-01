@@ -182,7 +182,7 @@ public class CursoDAO {
                     ", link_video" +
                     ", tipo_curso.tipo" +
                     " FROM cursos" +
-                    " JOIN tipo_curso ON tipo_curso.id = cursos.id_tipo_curso;"); //Preparando a instrução SQL
+                    " JOIN tipo_curso ON tipo_curso.id = cursos.id_tipo_curso"); //Preparando a instrução SQL
 
             conexao.rs = conexao.pstmt.executeQuery(); //Armazenando o Select dentro do objeto ResultSet
 
@@ -217,6 +217,60 @@ public class CursoDAO {
         }finally {
             conexao.desconectar(); //Fechando conexao com BD
         }
+    }
+
+    public Curso buscarCursoPeloLink(String link){
+
+        //Criando objeto para criar a conexao e criar os métodos do BD
+        Conexao conexao = new Conexao();
+
+        conexao.conectar(); //Abrindo conexão com BD
+
+        try {
+            conexao.pstmt = conexao.conn.prepareStatement(
+                    "SELECT cursos.id" +
+                             ", cursos.thumbnail" +
+                             ", cursos.duracao_segundos" +
+                             ", cursos.titulo" +
+                             ", cursos.link_video" +
+                             ", tipo_curso.tipo" +
+                        "  FROM cursos" +
+                        "  JOIN tipo_curso ON cursos.id_tipo_curso = tipo_curso.id" +
+                        " WHERE cursos.link_video = ?"
+            ); // Preparando a instrução SQL
+
+            // Setando os parâmetros
+            conexao.pstmt.setString(1,link);
+
+            conexao.rs = conexao.pstmt.executeQuery(); // Executando a Query
+
+            if (conexao.rs.next()){
+
+                // Instanciando o objeto para buscar o tipo de curso
+                TipoCursoDAO tipoCursoDAO = new TipoCursoDAO();
+
+                // Retornando o objeto de curso
+                return new Curso(
+                        conexao.rs.getInt("id"),
+                        conexao.rs.getString("thumbnail"),
+                        conexao.rs.getInt("duracao_segundos"),
+                        conexao.rs.getString("titulo"),
+                        conexao.rs.getString("link_video"),
+                        tipoCursoDAO.buscarTipoCursoPeloTipo(
+                            conexao.rs.getString("tipo")
+                        )
+                );
+            }
+
+            return null; // Caso não exista esse curso
+
+        }catch (SQLException sqle){
+            sqle.printStackTrace();
+            return null;
+        }finally {
+            conexao.desconectar();
+        }
+
     }
 
 

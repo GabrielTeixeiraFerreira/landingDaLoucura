@@ -15,7 +15,7 @@ import com.khita_servlet.dao.UsuarioDAO;
 import com.khita_servlet.model.Categoria;
 import com.khita_servlet.model.Usuario;
 
-@WebServlet(name = "alocar-preferencia" , value = "/pages/paginas-principais/alocar-preferencia")
+@WebServlet(name = "alocarPreferencia" , value = "/pages/paginas-principais/alocar-preferencia")
 public class AlocarPreferencia extends HttpServlet{
 
     @Override

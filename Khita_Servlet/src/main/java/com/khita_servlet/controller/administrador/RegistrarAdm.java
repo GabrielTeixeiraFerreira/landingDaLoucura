@@ -12,14 +12,14 @@ import jakarta.servlet.http.HttpServlet;
 
 import com.khita_servlet.dao.AdministradorDAO;
 
-@WebServlet(name = "registrar-administrador", value="/pages/paginas-principais/registrar-administrador")
+@WebServlet(name = "registrarAdministrador", value="/pages/paginas-principais/registrar-administrador")
 
 public class RegistrarAdm extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 //        Criando o objeto modificador de BD
-        AdministradorDAO adm = new AdministradorDAO();
+        AdministradorDAO administradorDAO = new AdministradorDAO();
 
 //        Recebendo os parâmetros como String já removendo os espaços da senha e do e-mail
         String nomeCompleto = req.getParameter("nome_completo");
@@ -35,7 +35,7 @@ public class RegistrarAdm extends HttpServlet{
         if (administrador.getEmail().matches("^[^.][a-zA-Z0-9._%+-].*@.*[.][a-z]{3}[.br]?")
          && administrador.getSenha().matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_]).{8,}$")){
 
-            if (adm.inserirAdministrador(administrador.getEmail(),
+            if (administradorDAO.inserirAdministrador(administrador.getEmail(),
                                          administrador.getSenha(),
                                          administrador.getNome_completo()) > 0){
                 // Retorne uma página avisando que foi cadastrado

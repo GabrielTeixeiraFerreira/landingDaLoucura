@@ -17,7 +17,7 @@ public class LoginAdm extends HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 //        Criando o objeto modificador de BD
-        AdministradorDAO adm = new AdministradorDAO();
+        AdministradorDAO administradorDAO = new AdministradorDAO();
 
 //        Recebendo os parâmetros como String
         String email = req.getParameter("email").strip();
@@ -25,7 +25,7 @@ public class LoginAdm extends HttpServlet{
 
 
 //        Verificando se é possível entrar no banco com esse conjunto de informações
-            if (adm.login(email,senha)) {
+            if (administradorDAO.login(email,senha)) {
                 // Jogar para página oculta para ADMs
                 req.getRequestDispatcher("/pages/paginas-principais/area-oculta.html").forward(req,resp);
             }else{

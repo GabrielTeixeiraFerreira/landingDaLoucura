@@ -20,8 +20,8 @@ public class RegistrarCategoria extends HttpServlet{
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 //        Criando o objeto modificador de BD
-        AdministradorDAO adm = new AdministradorDAO();
-        CategoriaDAO categoriaBD = new CategoriaDAO();
+        AdministradorDAO administradorDAO = new AdministradorDAO();
+        CategoriaDAO categoriaDAO = new CategoriaDAO();
 
 //        Recebendo os parâmetros como String removendo os espaços
         String email         = req.getParameter("email").strip();
@@ -38,7 +38,7 @@ public class RegistrarCategoria extends HttpServlet{
         }else {
 
 //             Verificando a existência do ADM
-            if (!adm.login(administrador.getEmail(),
+            if (!administradorDAO.login(administrador.getEmail(),
                            administrador.getSenha())){ //<-- caso não exista
 //              ADM não existe
                 req.setAttribute("erro", true);
@@ -46,12 +46,12 @@ public class RegistrarCategoria extends HttpServlet{
             }
             else {
 //                  Pegando o ID do ADM pelo e-mail e senha passados por ele
-                administrador = adm.buscarAdmPeloEmailESenha(email,senha);
+                administrador = administradorDAO.buscarAdmPeloEmailESenha(email,senha);
 
                 Categoria categoria = new Categoria(categoriaNome, administrador);
 
 //                 Inserindo categoria no BD
-                if (categoriaBD.inserirCategoria(categoria.getCategoria(),
+                if (categoriaDAO.inserirCategoria(categoria.getCategoria(),
                                                  categoria.getAdm_criador().getId()) > 0){
                     // Inseriu no BD
                     req.setAttribute("erro", false);

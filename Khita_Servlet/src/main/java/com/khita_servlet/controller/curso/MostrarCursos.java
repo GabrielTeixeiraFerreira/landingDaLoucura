@@ -14,13 +14,18 @@ import java.io.IOException;
 public class MostrarCursos extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        // Instanciando o objeto modificador de BD
         CursoDAO cursoDAO = new CursoDAO();
 
+        // Todos os cursos do BD como vetor
         Curso[] cursos = cursoDAO.buscarCursos();
 
+        // Instanciando os parâmetros que vão ser usados na página que irá mostrar
         req.setAttribute("cursos", cursos);
         req.setAttribute("qtdCursos", cursos.length);
 
+        // Enviando para a página onde os cursos serão mostrados
         req.getRequestDispatcher("/pages/paginas-mostrar/area-oculta-mostrar-curso.jsp").forward(req,resp);
     }
 }

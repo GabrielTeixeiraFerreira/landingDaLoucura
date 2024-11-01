@@ -19,13 +19,13 @@ public class RemoverCategoria extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 //        Criando o objeto modificador de BD
-        CategoriaDAO categoriaBD = new CategoriaDAO();
+        CategoriaDAO categoriaDAO = new CategoriaDAO();
 
 //        Recebendo os parâmetros
         String categoriaNome = req.getParameter("categoria");
 
         // Recebendo o objeto da categoria a ser removida
-        Categoria categoria = categoriaBD.buscarCategoriaPeloNomeCategoria(categoriaNome);
+        Categoria categoria = categoriaDAO.buscarCategoriaPeloNomeCategoria(categoriaNome);
 
         // Removendo categoria
         if (categoria == null) {
@@ -33,7 +33,7 @@ public class RemoverCategoria extends HttpServlet {
             req.setAttribute("erro",true);
             req.setAttribute("mensagem", "Categoria não existente");
 
-        } else if (categoriaBD.removerCategoria(categoria.getId())>0 && categoria.getId()>0){
+        } else if (categoriaDAO.removerCategoria(categoria.getId())>0 && categoria.getId()>0){
             // Mensagem avisando que removeu
             req.setAttribute("erro", false);
             req.setAttribute("mensagem", "Remoção da categoria ocorreu com sucesso");
@@ -41,7 +41,7 @@ public class RemoverCategoria extends HttpServlet {
         } else{
             // Erro no banco de dados ao remover
             req.setAttribute("erro", true);
-            req.setAttribute("mensagem", "Ocorreu um erro no banco de dados ao remover a categoria");
+            req.setAttribute("mensagem", "Ocorreu um erro no banco de dados ao remover a categoria ou a categoria está alocada a alguma preferencia ou produto");
         }
 
 //        Mandando para a página com a mensagem

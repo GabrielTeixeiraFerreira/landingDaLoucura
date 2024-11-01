@@ -19,6 +19,8 @@ public class MostrarAdm extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        req.getRequestDispatcher("/index.html").forward(req,resp);
+
 //        Criando o objeto modificador de BD
         AdministradorDAO administradorDAO = new AdministradorDAO();
 

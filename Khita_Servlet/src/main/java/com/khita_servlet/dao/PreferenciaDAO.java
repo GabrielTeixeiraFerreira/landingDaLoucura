@@ -70,21 +70,22 @@ public class PreferenciaDAO {
 //    =====================================================================================
 //    Método para remover a linha pelo id
 
-    public int removerPreferencia(int id){
+    public int removerPreferencia(int id_usuario, int id_categoria){
 
         //Criando objeto para criar a conexao e criar os métodos do BD
         Conexao conexao = new Conexao();
 
         conexao.conectar(); //Abrindo conexão com BD
 
-        String remover = "DELETE FROM preferencias WHERE ID = ?"; //Criando a instrução em uma variável separada
+        String remover = "DELETE FROM preferencias WHERE ID_USUARIO = ? AND ID_CATEGORIA = ?"; //Criando a instrução em uma variável separada
         try {
 
 //            Instanciando o objeto preparedStatement (pstmt)
             conexao.pstmt = conexao.conn.prepareStatement(remover);
 
 //            Setando o valor do parâmetro
-            conexao.pstmt.setInt(1,id);
+            conexao.pstmt.setInt(1,id_usuario);
+            conexao.pstmt.setInt(2,id_categoria);
 
             return conexao.pstmt.executeUpdate(); // Executando e retornando a quantidade de linhas que mudaram
 

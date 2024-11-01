@@ -77,8 +77,7 @@ public class RegistrarCurso extends  HttpServlet{
             }
         }
 
-
-
+        // Enviando para a página com as possíveis mensagens
         req.getRequestDispatcher("/pages/paginas-mensagem/area-oculta-mensagem.jsp").forward(req,resp);
 
 
