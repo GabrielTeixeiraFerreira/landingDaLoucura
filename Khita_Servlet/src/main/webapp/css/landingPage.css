@@ -489,7 +489,7 @@ iframe {
   margin: 100px auto;
   padding: 40px;
   border-radius: 10px;
-  width: 95%;
+  width: 90%;
   max-width: 800px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   display: flex;
@@ -1171,7 +1171,7 @@ iframe {
 
 /* Estilos do Footer */
 .site-footer {
-  background-color: var(--cor-secundaria-hover);
+  background-color: #11114e;
   color: #fff;
   padding: 20px 10px;
   font-family: Arial, sans-serif;
