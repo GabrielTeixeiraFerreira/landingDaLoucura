@@ -5,6 +5,7 @@
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/index.html" value="file://$PROJECT_DIR$/src/main/webapp" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/login.html" value="file://$PROJECT_DIR$/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/pages/paginas-mostrar/area-oculta-mostrar-administrador.jsp" value="file://$PROJECT_DIR$/src/main/webapp/pages/paginas-mostrar" />
       </map>
     </option>
   </component>
