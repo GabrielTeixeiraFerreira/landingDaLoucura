@@ -177,6 +177,7 @@ body {
   top: 6%;
   background-color: var(--azul);
   border-radius: 15px;
+  z-index: 1;
 
   transition: 0.3s;
 }
