@@ -795,11 +795,11 @@ iframe {
 .container_card11 .card.card11_2 {
   position: relative;
   display: flex;
-  height: 200px;
+  height: 195px;
   justify-content: center;
   align-items: center;
   transition: 0.5s;
-  transform: translateY(-100px);
+  transform: translateY(-99px);
   border-radius: 25px;
   background-color: var(--cor-fundo);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
@@ -977,7 +977,7 @@ iframe {
   .container_card10 .card.card10_2,
   .container_card11 .card.card11_2 {
     height: 140px;
-    transform: translateY(-40px);
+    transform: translateY(-41px);
   }
 
   .container_card1:hover .card.card1_2 .contentcard,
