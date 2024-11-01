@@ -3,17 +3,20 @@ document.addEventListener("DOMContentLoaded", function () {
     function configurarPopup(containerClass, popupId, closePopupId) {
       const popup = document.getElementById(popupId);
       const closePopupBtn = document.getElementById(closePopupId);
+      const body = document.body;
   
       // Mostra o pop-up ao clicar no card
       document
         .querySelector(containerClass)
         .addEventListener("click", function () {
           popup.style.display = "block";
+          body.style.overflow = "hidden"; // Evita que o scroll seja permitido na página
         });
   
       // Fecha o pop-up ao clicar no botão de fechar
       closePopupBtn.addEventListener("click", function () {
         popup.style.display = "none";
+        body.style.overflow = "auto"; // Retorna o scroll à página original
       });
     }
   
