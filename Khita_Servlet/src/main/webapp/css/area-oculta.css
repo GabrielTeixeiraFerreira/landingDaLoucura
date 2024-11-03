@@ -49,9 +49,8 @@ header ul {
 }
 
 .title img {
-  width: 55%;
-  margin: 4% 0 0 25%;
-  height: auto;
+  width: 50%;
+  margin: 4% 0 0 15%;
 }
 
 .nav-titulo {
@@ -65,6 +64,11 @@ header ul {
 .nav-titulo a {
   text-decoration: none;
   color: rgb(255, 255, 255);
+  transition: 0.5s all;
+}
+
+.nav-titulo a:hover {
+  color: var(--cor-secundaria-hover);
 }
 
 /* Tirando bolinhas dos links */
@@ -72,12 +76,11 @@ header ul {
   list-style: none;
   margin-bottom: 35%;
   margin: 0;
-  padding: 120px;
+  padding: 20px;
 }
 /* Estilizando os links e posicionando de maneira que fique bom */
 
-/* Estilizando icone do perfil */
-
+/* Estilizando icone */
 .home {
   padding: 12.5px;
   border-radius: 25px;
@@ -112,7 +115,7 @@ header ul {
   transition: 0.6s;
 }
 
-/* Colocando responsividade caso tela reduza de tamanho, o iconee do hamburger aparecerá caso a tela estiver com 768px ou menor */
+/* Colocando responsividade caso tela reduza de tamanho, o iconee do hamburger aparecerá caso a tela estiver com 1280px ou menor */
 @media (max-width: 1280px) {
   body {
     overflow-x: hidden;
@@ -126,16 +129,13 @@ header ul {
     position: fixed;
     display: none;
     position: absolute;
-    top: 102%;
+    top: 99%;
     right: 0;
-    background: var(--cor-primaria-hover);
+    background-color: var(--cor-primaria);
     flex-direction: column-reverse;
-    box-shadow: #000000 2px 2px 2px 2px;
-    padding: 50px;
-    padding-top: 250px;
-    padding-bottom: 252px;
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.3);
+    padding: 2%;
     width: 20%;
-    height: 110%;
     z-index: 999;
   }
 
@@ -181,6 +181,10 @@ header ul {
   text-decoration: none;
 }
 
+.content-item a:hover {
+  background-color: var(--cor-primaria-hover);
+}
+
 .content-item a {
   width: 40%;
   text-decoration: none;
@@ -188,6 +192,9 @@ header ul {
   background-color: #f6c44e;
   padding: 12px;
   border-radius: 8px;
+  transition: 0.5s;
+  font-weight: bold;
+  box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
 .tab-content {
@@ -208,63 +215,74 @@ header ul {
 
 /* Imagens utilizadas em cada pagina */
 
-.main-content img {
-  display: flex;
+#user,
+#endereco,
+#analytics {
   position: relative;
   left: 120%;
-  width: 40%;
-  bottom: 20%;
 }
-
-#admin {
-  display: flex;
+#tipo-curso {
   position: relative;
-  left: 80%;
-  width: 30%;
-  bottom: 100%;
+  left: 100%;
 }
-
-#endereco {
-  display: flex;
-  position: relative;
-  left: 110%;
-  width: 40%;
-  bottom: 100%;
-}
-
-#categoria {
-  display: flex;
-  position: relative;
-  width: 40%;
-  bottom: 20%;
-}
-
-#user {
-  display: flex;
-  position: relative;
-  left: 120%;
-  width: 40%;
-  bottom: 20%;
-}
-
+#curso,
+#categoria,
 #pref {
-  display: flex;
   position: relative;
-  left: 140%;
-  width: 45%;
-}
-#curso {
-  display: flex;
-  position: relative;
-  left: 150%;
-  width: 60%;
+  left: 125%;
 }
 
-.tipo-curso {
-  width: 100%;
-  position: relative;
-  right: 15%;
+@media screen and (max-width: 1300px) {
+  /* Posicionando os elementos */
+  #categoria,
+  #tipo-curso,
+  #curso,
+  #pref,
+  #analytics,
+  #endereco,
+  #endereco,
+  #user {
+    left: 50%;
+    transform: translateX(100%);
+  }
 }
+@media screen and (max-width: 1000px) {
+  /* Posicionando os elementos */
+  #categoria,
+  #tipo-curso,
+  #curso,
+  #pref,
+  #analytics,
+  #endereco,
+  #endereco,
+  #user {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Posicionando os elementos */
+  .imgs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    margin: 30px;
+    padding: 10px;
+  }
+
+  #categoria,
+  #tipo-curso,
+  #curso,
+  #pref,
+  #analytics,
+  #endereco,
+  #endereco,
+  #user {
+    left: 0;
+    transform: translateX(0);
+  }
+}
+
 /* -------------------------------------------- */
 
 /* Estilizando os botões e o forms */
@@ -277,7 +295,6 @@ button {
   padding: 5px;
   margin: 15px 0 10px 0;
   white-space: nowrap; /* Garante que o texto fique em uma linha só */
-
 }
 button:hover {
   background: var(--cor-primaria-hover);

@@ -1,35 +1,50 @@
-<%@ page import="com.khita_servlet.model.Administrador" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.khita_servlet.model.Administrador" %> <%@ page
+contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../css/tabela.css">
+    <link rel="stylesheet" href="../../css/tabela.css" />
     <title>Administradores</title>
   </head>
   <body>
-<div class="table-content">
-    <table>
+    <div class="table-content">
+      <div class="back-icon">
+        <a href="../paginas-principais/area-oculta.html" class="back-button">
+          <img src="caminho-do-icone.png" alt="Voltar" />
+        </a>
+      </div>
+
+      <table>
         <tr>
-            <th>Id</th>
-            <th>Nome Completo</th>
-            <th>E-mail ADM</th>
-            <th>Senha ADM</th>
+          <th>Id</th>
+          <th>Nome Completo</th>
+          <th>E-mail ADM</th>
+          <th>Senha ADM</th>
         </tr>
-    
+
         <% int qtdAdministradores = (int) request.getAttribute("qtdAdms");
-            Administrador[] administradores = (Administrador[]) request.getAttribute("adms");
-            for (int i = 0; i < qtdAdministradores; i++) {%>
-    
+        Administrador[] administradores = (Administrador[])
+        request.getAttribute("adms"); for (int i = 0; i < qtdAdministradores;
+        i++) {%>
+
         <tr>
-            <td><%= administradores[i].getId() %></td>
-            <td><%= administradores[i].getNome_completo() %></td>
-            <td><%= administradores[i].getEmail() %></td>
-            <td><%= administradores[i].getSenha() %></td>
+          <td><%= administradores[i].getId() %></td>
+          <td><%= administradores[i].getNome_completo() %></td>
+          <td><%= administradores[i].getEmail() %></td>
+          <td><%= administradores[i].getSenha() %></td>
         </tr>
-    
+
         <% } %>
-    </table>
-</div>
+      </table>
+    </div>
+
+    <!-- Botão para voltar para página principal -->
+    <div class="voltar">
+      <a href="../paginas-principais/area-oculta.html" class="botao-voltar">
+        <img src="voltar.png" alt="Voltar" />
+        <span>Voltar</span>
+      </a>
+    </div>
   </body>
 </html>
