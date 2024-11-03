@@ -54,9 +54,7 @@ header ul {
   height: auto;
 }
 
-
 .nav-titulo {
-
   width: 100%;
   text-align: center;
   font-size: 120%;
@@ -64,11 +62,9 @@ header ul {
   padding: 0 60px 0 60px;
 }
 
-.nav-titulo a{
-
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-
+.nav-titulo a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
 }
 
 /* Tirando bolinhas dos links */
@@ -80,11 +76,9 @@ header ul {
 }
 /* Estilizando os links e posicionando de maneira que fique bom */
 
-
 /* Estilizando icone do perfil */
 
-
-.home{
+.home {
   padding: 12.5px;
   border-radius: 25px;
   width: 40px;
@@ -128,8 +122,6 @@ header ul {
     background-color: var(--cor-primaria);
   }
 
-
-
   header .nav-links {
     position: fixed;
     display: none;
@@ -147,7 +139,6 @@ header ul {
     z-index: 999;
   }
 
-
   .title {
     width: 32%;
   }
@@ -156,7 +147,7 @@ header ul {
     text-align: center;
     margin: 0;
     padding: 0;
-}
+  }
 
   header .nav-links.active {
     display: flex;
@@ -182,7 +173,6 @@ header ul {
   flex-grow: 1;
   position: absolute;
   left: 5%;
-
 }
 .content-item {
   list-style: none;
@@ -191,7 +181,7 @@ header ul {
   text-decoration: none;
 }
 
-.content-item a{
+.content-item a {
   width: 40%;
   text-decoration: none;
   color: var(--cor-secundaria);
@@ -199,7 +189,6 @@ header ul {
   padding: 12px;
   border-radius: 8px;
 }
-
 
 .tab-content {
   display: none;
@@ -219,97 +208,90 @@ header ul {
 
 /* Imagens utilizadas em cada pagina */
 
-.main-content img{
-    display: flex;
-    position: relative;
-    left: 120%;
-    width: 40%;
-    bottom: 20%;
+.main-content img {
+  display: flex;
+  position: relative;
+  left: 120%;
+  width: 40%;
+  bottom: 20%;
 }
 
-#admin{
-    display: flex;
-    position: relative;
-    left: 80%;
-    width: 30%;
-    bottom: 100%;
-
+#admin {
+  display: flex;
+  position: relative;
+  left: 80%;
+  width: 30%;
+  bottom: 100%;
 }
 
-#endereco{
-
+#endereco {
   display: flex;
   position: relative;
   left: 110%;
   width: 40%;
   bottom: 100%;
-
 }
 
-#categoria{
-
+#categoria {
   display: flex;
   position: relative;
   width: 40%;
   bottom: 20%;
 }
 
-#user{
+#user {
   display: flex;
-    position: relative;
-    left: 120%;
-    width: 40%;
-    bottom: 20%;
-
+  position: relative;
+  left: 120%;
+  width: 40%;
+  bottom: 20%;
 }
 
-#pref{
+#pref {
   display: flex;
   position: relative;
   left: 140%;
   width: 45%;
-
 }
-#curso{
-
+#curso {
   display: flex;
   position: relative;
   left: 150%;
   width: 60%;
-
 }
 
-.tipo-curso{
+.tipo-curso {
   width: 100%;
   position: relative;
   right: 15%;
 }
 /* -------------------------------------------- */
 
-
 /* Estilizando os botões e o forms */
-
 
 button {
   background: var(--cor-primaria);
   border-color: #faaf54;
   border-radius: 10px;
-  width: 150px;
+  width: 160px;
+  padding: 5px;
+  margin: 15px 0 10px 0;
+  white-space: nowrap; /* Garante que o texto fique em uma linha só */
+
 }
 button:hover {
   background: var(--cor-primaria-hover);
 }
+
 input {
   border-radius: 5px;
 }
 
-@media screen and (max-width:768px){
-.content-item{
-  display: block;
-  margin-bottom: 35px;
+@media screen and (max-width: 768px) {
+  .content-item {
+    display: block;
+    margin-bottom: 35px;
+  }
 }
-
-}
-
 
 /* ------------------------------------- */
