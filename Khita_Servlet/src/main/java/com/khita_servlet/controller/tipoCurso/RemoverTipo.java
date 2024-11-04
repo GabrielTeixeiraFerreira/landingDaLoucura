@@ -1,5 +1,6 @@
 package com.khita_servlet.controller.tipoCurso;
 
+import com.khita_servlet.dao.CursoDAO;
 import com.khita_servlet.dao.TipoCursoDAO;
 import com.khita_servlet.model.TipoCurso;
 import jakarta.servlet.ServletException;
@@ -14,6 +15,8 @@ import java.io.IOException;
 public class RemoverTipo extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        TipoCursoDAO tipoDAO = new TipoCursoDAO();
+        CursoDAO cursoDAO = new CursoDAO();
 
         // Instanciando o objeto modificador de BD
         TipoCursoDAO tipoCursoDAO = new TipoCursoDAO();
@@ -48,4 +51,6 @@ public class RemoverTipo extends HttpServlet {
         req.getRequestDispatcher("/pages/paginas-mensagem/area-oculta-mensagem.jsp").forward(req,resp);
 
     }
+
 }
+
