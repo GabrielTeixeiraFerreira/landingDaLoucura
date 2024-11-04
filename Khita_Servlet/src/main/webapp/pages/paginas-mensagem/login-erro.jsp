@@ -13,7 +13,7 @@
     </style>
     <title>Login</title>
 </head>
-<jsp:include page="../paginas-principais/login.html"></jsp:include>
+<jsp:include page="../paginas-principais/login.jsp"></jsp:include>
 <body>
     <div id="mensagem">
         <a href="#mensagem">X</a>
