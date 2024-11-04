@@ -1,5 +1,5 @@
 <%@ page errorPage="404.jsp" contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:include page="../paginas-principais/area-oculta.html"></jsp:include>
+<jsp:include page="../paginas-principais/area-oculta.jsp"></jsp:include>
 <html>
 <head>
     <link rel="stylesheet" href="../../css/erro.css">

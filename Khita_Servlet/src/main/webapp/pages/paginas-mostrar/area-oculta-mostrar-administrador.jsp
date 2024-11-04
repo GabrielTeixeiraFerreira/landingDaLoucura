@@ -35,7 +35,7 @@
 
     <!-- Botão para voltar para página principal -->
     <div class="voltar">
-      <a href="../paginas-principais/area-oculta.html" class="botao-voltar">
+      <a href="../paginas-principais/area-oculta.jsp" class="botao-voltar">
         <img src="../../assets/voltar.png" alt="Voltar" />
         <span>Voltar</span>
       </a>
