@@ -11,7 +11,7 @@
 <body>
     <div class="content">
         <div class="logo">
-            <img src="../../assets/Logo%20Khiata.svg" alt="">
+            <img src="../../assets/LogoKhiata.svg" alt="">
         </div>
 
         <div class="formulario">

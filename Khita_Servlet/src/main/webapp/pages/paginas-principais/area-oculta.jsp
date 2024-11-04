@@ -14,7 +14,7 @@
 <header>
     <nav class="navbar">
         <div class="title">
-            <a href="area-oculta.html">
+            <a href="area-oculta.jsp">
                 <img
                         src="../../assets/LogoKhiata_branco.png"
                         alt="Logo Khiata"
@@ -128,7 +128,7 @@
 
             <label for="categoria">Nome da categoria</label>
             <br>
-            <input type="text" name="categoria" id="categoria">
+            <input type="text" name="categoria" id="categoriaInput">
 
             <br><br>
 
@@ -146,7 +146,7 @@
 
             <label for="categoria">Nome da categoria</label>
             <br>
-            <input type="text" name="categoria" id="categoria">
+            <input type="text" name="categoria" id="categoriaInput">
 
             <br><br>
 
@@ -334,7 +334,7 @@
 
             <label for="categoria">Nome da categoria</label>
             <br>
-            <input type="text" name="categoria" id="categoria">
+            <input type="text" name="categoria" id="categoriaInput">
 
             <br><br>
 
@@ -358,7 +358,7 @@
 
             <label for="categoria">Nome da categoria</label>
             <br>
-            <input type="text" name="categoria" id="categoria">
+            <input type="text" name="categoria" id="categoriaInput">
 
             <br><br>
 

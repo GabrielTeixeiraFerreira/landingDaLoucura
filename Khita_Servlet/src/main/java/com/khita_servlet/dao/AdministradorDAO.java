@@ -22,7 +22,7 @@ public class AdministradorDAO {
             // Criando a instrução com parametros a definir
             conexao.pstmt = conexao.conn.prepareStatement("insert into administrador " +
                     "(EMAIL, SENHA, NOME_COMPLETO) " + // <-- colunas
-                    "values (?,?,?)");  // <-- parametros
+                    "values (?, FN_CriptografarSenha(?) ,?)");  // <-- parametros
 
             //  Setando os parametros
             conexao.pstmt.setString(1,email);

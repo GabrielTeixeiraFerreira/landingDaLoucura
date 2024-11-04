@@ -755,8 +755,8 @@
         </div>
         <div class="footer">
             <h3>Siga-nos</h3>
-            <a href="https://facebook.com">Facebook</a>
-            <a href="https://www.instagram.com/khiatatextil/">Instagram</a>
+            <a href="https://www.facebook.com/profile.php?id=61568205062290" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/khiatatextil/" target="_blank">Instagram</a>
         </div>
     </div>
     <div class="footer-bottom">
