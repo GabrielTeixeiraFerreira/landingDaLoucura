@@ -1,3 +1,4 @@
+<%@ page errorPage="../paginas-mensagem/404.jsp" contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +18,7 @@
             <h1>Bem-vindo, administrador!</h1>
 
             <br>
-            <form>
+            <form action="login-adm" method="post">
                 <label for="email">E-mail do administrador</label>
                 <br>
                 <input type="email" name="email" id="email" placeholder="voce@exemplo.com">

@@ -1,5 +1,5 @@
 <%@ page import="com.khita_servlet.model.Usuario" %>
-<%@ page import="com.khita_servlet.model.Endereco" %>
+<%@ page import="com.khita_servlet.model.Endereco" errorPage="404.jsp" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

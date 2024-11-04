@@ -1,5 +1,5 @@
 <%@ page import="com.khita_servlet.model.Administrador" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="../paginas-mensagem/404.jsp" %>
 <html>
   <head>
     <meta charset="UTF-8" />

@@ -1,3 +1,4 @@
+<%@ page errorPage="pages/paginas-mensagem/404.jsp" contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,7 +13,7 @@
 
 <div class="conteudo-principal">
 
-    <a href="/pages/paginas-principais/login.html" class="login">
+    <a href="${pageContext.request.contextPath}/pages/paginas-principais/login.jsp" class="login">
         <img src="assets/pessoa.svg" alt="">
     </a>
 

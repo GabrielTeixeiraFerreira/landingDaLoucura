@@ -1,4 +1,4 @@
-<%@ page import="com.khita_servlet.model.Usuario" %>
+<%@ page import="com.khita_servlet.model.Usuario" errorPage="../paginas-mensagem/404.jsp" %>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
