@@ -195,6 +195,7 @@ header ul {
   transition: 0.5s;
   font-weight: bold;
   box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }
 
 .tab-content {
@@ -232,6 +233,11 @@ header ul {
   left: 125%;
 }
 
+#admin{
+  position: relative;
+  left: 80%;
+}
+
 @media screen and (max-width: 1300px) {
   /* Posicionando os elementos */
   #categoria,
@@ -244,6 +250,9 @@ header ul {
   #user {
     left: 50%;
     transform: translateX(100%);
+  }
+  #admin {
+    left: 65%;
   }
 }
 @media screen and (max-width: 1000px) {
@@ -277,7 +286,8 @@ header ul {
   #analytics,
   #endereco,
   #endereco,
-  #user {
+  #user,
+  #admin {
     left: 0;
     transform: translateX(0);
   }

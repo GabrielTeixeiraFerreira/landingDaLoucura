@@ -1,5 +1,5 @@
-<%@ page import="com.khita_servlet.model.Administrador" %> <%@ page
-contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.khita_servlet.model.Administrador" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -9,12 +9,6 @@ contentType="text/html;charset=UTF-8" language="java" %>
   </head>
   <body>
     <div class="table-content">
-      <div class="back-icon">
-        <a href="../paginas-principais/area-oculta.html" class="back-button">
-          <img src="caminho-do-icone.png" alt="Voltar" />
-        </a>
-      </div>
-
       <table>
         <tr>
           <th>Id</th>
@@ -42,7 +36,7 @@ contentType="text/html;charset=UTF-8" language="java" %>
     <!-- Botão para voltar para página principal -->
     <div class="voltar">
       <a href="../paginas-principais/area-oculta.html" class="botao-voltar">
-        <img src="voltar.png" alt="Voltar" />
+        <img src="../../assets/voltar.png" alt="Voltar" />
         <span>Voltar</span>
       </a>
     </div>

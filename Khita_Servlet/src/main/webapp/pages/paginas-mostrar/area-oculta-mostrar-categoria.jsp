@@ -8,7 +8,6 @@
     <title>Categorias</title>
   </head>
   <body>
-
     <div class="table-content">
       <table>
         <tr>
@@ -18,8 +17,9 @@
           <th>E-mail ADM</th>
         </tr>
         <% int qtdCategorias = (int) request.getAttribute("qtdCategorias");
-        Categoria[] categorias = (Categoria[]) request.getAttribute("categorias");
-        for (int i = 0; i < qtdCategorias; i++) {%>
+        Categoria[] categorias = (Categoria[])
+        request.getAttribute("categorias"); for (int i = 0; i < qtdCategorias;
+        i++) {%>
         <tr>
           <td><%= categorias[i].getId() %></td>
           <td><%= categorias[i].getCategoria() %></td>
@@ -28,6 +28,14 @@
         </tr>
         <% } %>
       </table>
+    </div>
+
+    <!-- Botão para voltar para página principal -->
+    <div class="voltar">
+      <a href="../paginas-principais/area-oculta.html" class="botao-voltar">
+        <img src="../../assets/voltar.png" alt="Voltar" />
+        <span>Voltar</span>
+      </a>
     </div>
   </body>
 </html>
