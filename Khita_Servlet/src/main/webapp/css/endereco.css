@@ -35,12 +35,12 @@ body{
 
 .enviar{
     text-align: center;
-    background-color: #f6c44e;
+    background-color: aqua;
     position: relative;
     left: 100%;
     text-decoration: none;
     border: 1px solid bisque;
     border-radius: 20px;
     padding: 10px;
-    color: white;
+    color: black;
 }
