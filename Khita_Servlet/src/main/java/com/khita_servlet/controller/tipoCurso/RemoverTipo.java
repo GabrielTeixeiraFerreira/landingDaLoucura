@@ -18,31 +18,38 @@ public class RemoverTipo extends HttpServlet {
         TipoCursoDAO tipoDAO = new TipoCursoDAO();
         CursoDAO cursoDAO = new CursoDAO();
 
+        // Instanciando o objeto modificador de BD
+        TipoCursoDAO tipoCursoDAO = new TipoCursoDAO();
+
+        // Pegando os parâmetros como String
         String tipo = req.getParameter("tipo");
 
-        if (tipo != null) {
-            TipoCurso tipoCurso = new TipoCurso(tipo);
+        // Pegando o objeto do Banco
+        TipoCurso tipoCurso = tipoCursoDAO.buscarTipoCursoPeloTipo(tipo);
 
-            // Verificar se o tipoCurso está associado a algum curso
-            if (cursoDAO.isTipoCursoAlocado(tipo)) {
+        if (tipoCurso != null){
+            // Caso exista esse tipo de curso
+
+            if (tipoCursoDAO.removerTipoCurso(tipoCurso.getId())>0){
+                // Caso consiga remover
+                req.setAttribute("erro", false);
+                req.setAttribute("mensagem", "Tipo de curso removido com sucesso");
+
+            } else{
+                // Caso não consiga remover
                 req.setAttribute("erro", true);
-                req.setAttribute("mensagem", "Tipo de curso não pode ser removido pois está associado a um ou mais cursos.");
-            } else {
-                // Remover o tipoCurso caso não esteja associado
-                if (tipoDAO.removerTipoCurso(tipoCurso.getId()) > 0) {
-                    req.setAttribute("erro", false);
-                    req.setAttribute("mensagem", "Tipo de curso removido com sucesso!");
-                } else {
-                    req.setAttribute("erro", true);
-                    req.setAttribute("mensagem", "Ocorreu um erro ao remover o tipo de curso, tente novamente.");
-                }
+                req.setAttribute("mensagem", "Ocorreu um erro com o banco de dados ou esse tipo de curso está alocado a um curso.");
             }
-        } else {
+
+        } else{
+            // Caso não possua esse tipo de curso no banco
             req.setAttribute("erro", true);
-            req.setAttribute("mensagem", "Tipo de curso não existente.");
+            req.setAttribute("mensagem", "Não existe esse tipo de curso");
         }
 
-        req.getRequestDispatcher("/pages/paginas-mensagem/area-oculta-mensagem.jsp").forward(req, resp);
+        // Mandando para a página com o resultado da ação
+        req.getRequestDispatcher("/pages/paginas-mensagem/area-oculta-mensagem.jsp").forward(req,resp);
+
     }
 
 }

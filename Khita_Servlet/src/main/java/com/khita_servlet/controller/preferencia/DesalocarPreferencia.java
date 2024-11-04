@@ -61,6 +61,8 @@ public class DesalocarPreferencia extends HttpServlet {
 
             }
 
+            // Mandando para a página onde estará o resultado da ação
+            req.getRequestDispatcher("/pages/paginas-mensagem/area-oculta-mensagem.jsp").forward(req,resp);
 
         }
 
