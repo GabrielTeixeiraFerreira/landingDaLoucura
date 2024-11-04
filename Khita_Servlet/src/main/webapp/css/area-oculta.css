@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 /* HEADER */
 /* ------------------------------------- */
 /* Definição / Paletade cores */
@@ -15,11 +17,17 @@ body,
 html {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Poppins";
+  background: linear-gradient(
+    to right,
+    var(--cor-secundaria),
+    var(--cor-primaria-hover)
+  );
 }
 
 /* Estilo do cabeçalho */
 header {
+  width: 100%;
   background-color: var(--cor-primaria);
   color: white;
   box-shadow: 0px 0px 8px 0px black;
@@ -49,14 +57,11 @@ header ul {
 }
 
 .title img {
-  width: 55%;
-  margin: 4% 0 0 25%;
-  height: auto;
+  width: 50%;
+  margin: 4% 0 0 15%;
 }
 
-
 .nav-titulo {
-
   width: 100%;
   text-align: center;
   font-size: 120%;
@@ -64,11 +69,14 @@ header ul {
   padding: 0 60px 0 60px;
 }
 
-.nav-titulo a{
+.nav-titulo a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  transition: 0.5s all;
+}
 
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-
+.nav-titulo a:hover {
+  color: var(--cor-secundaria-hover);
 }
 
 /* Tirando bolinhas dos links */
@@ -76,15 +84,12 @@ header ul {
   list-style: none;
   margin-bottom: 35%;
   margin: 0;
-  padding: 120px;
+  padding: 20px;
 }
 /* Estilizando os links e posicionando de maneira que fique bom */
 
-
-/* Estilizando icone do perfil */
-
-
-.home{
+/* Estilizando icone */
+.home {
   padding: 12.5px;
   border-radius: 25px;
   width: 40px;
@@ -118,7 +123,7 @@ header ul {
   transition: 0.6s;
 }
 
-/* Colocando responsividade caso tela reduza de tamanho, o iconee do hamburger aparecerá caso a tela estiver com 768px ou menor */
+/* Colocando responsividade caso tela reduza de tamanho, o iconee do hamburger aparecerá caso a tela estiver com 1280px ou menor */
 @media (max-width: 1280px) {
   body {
     overflow-x: hidden;
@@ -128,25 +133,18 @@ header ul {
     background-color: var(--cor-primaria);
   }
 
-
-
   header .nav-links {
     position: fixed;
     display: none;
     position: absolute;
-    top: 102%;
+    top: 99%;
     right: 0;
-    background: var(--cor-primaria-hover);
+    background-color: var(--cor-primaria);
     flex-direction: column-reverse;
-    box-shadow: #000000 2px 2px 2px 2px;
-    padding: 50px;
-    padding-top: 250px;
-    padding-bottom: 252px;
-    width: 20%;
-    height: 110%;
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.3);
+    padding: 2%;
     z-index: 999;
   }
-
 
   .title {
     width: 32%;
@@ -156,7 +154,7 @@ header ul {
     text-align: center;
     margin: 0;
     padding: 0;
-}
+  }
 
   header .nav-links.active {
     display: flex;
@@ -179,27 +177,36 @@ header ul {
 /* CONTEÚDO */
 /* ------------------------------------- */
 .main-content {
-  flex-grow: 1;
-  position: absolute;
-  left: 5%;
-
+  color: #f6f6f6;
+  display: flex;
+  margin-left: 4%;
 }
 .content-item {
   list-style: none;
   display: inline;
   padding-right: 20px;
   text-decoration: none;
+  z-index: 999;
 }
 
-.content-item a{
+.content-item a {
   width: 40%;
   text-decoration: none;
   color: var(--cor-secundaria);
   background-color: #f6c44e;
-  padding: 12px;
+  padding: 13px;
   border-radius: 8px;
+  transition: 0.5s;
+  font-weight: bold;
+  box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }
 
+.content-item a:hover {
+  background-color: var(--cor-primaria-hover);
+  /* transform: translate(50px, 50px); */
+  color: #f6f6f6;
+}
 
 .tab-content {
   display: none;
@@ -207,6 +214,7 @@ header ul {
 
 .tab-content.active {
   display: block;
+  width: 100%;
 }
 
 .info h1 {
@@ -218,98 +226,117 @@ header ul {
 }
 
 /* Imagens utilizadas em cada pagina */
-
-.main-content img{
-    display: flex;
-    position: relative;
-    left: 120%;
-    width: 40%;
-    bottom: 20%;
+.imgs {
+  filter: drop-shadow(3px 3px 3px black);
 }
 
-#admin{
-    display: flex;
-    position: relative;
-    left: 80%;
-    width: 30%;
-    bottom: 100%;
-
-}
-
-#endereco{
-
-  display: flex;
+#user,
+#endereco {
   position: relative;
-  left: 110%;
-  width: 40%;
-  bottom: 100%;
-
+  left: 120%;
 }
-
-#categoria{
-
-  display: flex;
+#tipo-curso {
   position: relative;
-  width: 40%;
-  bottom: 20%;
+  left: 100%;
 }
 
-#user{
-  display: flex;
-    position: relative;
-    left: 120%;
-    width: 40%;
-    bottom: 20%;
-
-}
-
-#pref{
-  display: flex;
+#categoria,
+#pref,
+#analytics {
   position: relative;
-  left: 140%;
-  width: 45%;
-
+  left: 125%;
 }
-#curso{
-
-  display: flex;
+#curso {
   position: relative;
   left: 150%;
-  width: 60%;
-
 }
 
-.tipo-curso{
-  width: 100%;
+#admin {
   position: relative;
-  right: 15%;
+  left: 80%;
 }
+
+@media screen and (max-width: 1550px) {
+  /* Posicionando os elementos */
+  #categoria,
+  #tipo-curso,
+  #curso,
+  #pref,
+  #analytics,
+  #endereco,
+  #endereco,
+  #user {
+    left: 50%;
+    transform: translateX(100%);
+  }
+  #admin {
+    left: 65%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  /* Posicionando os elementos */
+  #categoria,
+  #tipo-curso,
+  #curso,
+  #pref,
+  #analytics,
+  #endereco,
+  #endereco,
+  #user {
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Posicionando os elementos */
+  .imgs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    margin: 30px;
+    padding: 10px;
+  }
+
+  #categoria,
+  #tipo-curso,
+  #curso,
+  #pref,
+  #analytics,
+  #endereco,
+  #endereco,
+  #user,
+  #admin {
+    left: 0;
+    transform: translateX(0);
+  }
+}
+
 /* -------------------------------------------- */
 
-
 /* Estilizando os botões e o forms */
-
 
 button {
   background: var(--cor-primaria);
   border-color: #faaf54;
   border-radius: 10px;
-  width: 150px;
+  width: 160px;
+  padding: 5px;
+  margin: 15px 0 10px 0;
+  white-space: nowrap; /* Garante que o texto fique em uma linha só */
 }
 button:hover {
   background: var(--cor-primaria-hover);
 }
+
 input {
   border-radius: 5px;
 }
 
-@media screen and (max-width:768px){
-.content-item{
-  display: block;
-  margin-bottom: 35px;
+@media screen and (max-width: 768px) {
+  .content-item {
+    display: block;
+    margin-bottom: 35px;
+  }
 }
-
-}
-
 
 /* ------------------------------------- */

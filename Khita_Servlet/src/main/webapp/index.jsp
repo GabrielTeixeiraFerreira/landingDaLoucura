@@ -1,3 +1,4 @@
+<%@ page errorPage="pages/paginas-mensagem/404.jsp" contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,7 +13,7 @@
 
 <div class="conteudo-principal">
 
-    <a href="/pages/paginas-principais/login.html" class="login">
+    <a href="${pageContext.request.contextPath}/pages/paginas-principais/login.jsp" class="login">
         <img src="assets/pessoa.svg" alt="">
     </a>
 
@@ -259,7 +260,7 @@
             <div class="card card_1">
                 <div class="contentcard ">
                     <div class="imagem">
-                        <img src="assets/file.enc" alt="Pessoa">
+                        <img src="assets/inacio.jpg" alt="Pessoa">
                     </div>
                 </div>
             </div>
@@ -277,7 +278,7 @@
                     </div>
                     <div class="popup-body">
                         <div class="popup-left">
-                            <img src="assets/file.enc" alt="Foto da Pessoa 2" class="modal-img">
+                            <img src="assets/inacio.jpg" alt="Foto da Pessoa 2" class="modal-img">
                             <p class="popup-desc">
                                 Estudante do Germinare Tech - Desenvolvedor do app Khiata -
                                 Pretende seguir ramo de Desenvolvedor de Sistemas.
@@ -308,7 +309,7 @@
             <div class="card card_1">
                 <div class="contentcard ">
                     <div class="imagem">
-                        <img src="assets/teixeirafoto.jpeg" alt="Pessoa">
+                        <img src="assets/tetxsFoto.jpeg" alt="Pessoa">
                     </div>
                 </div>
             </div>
@@ -326,7 +327,7 @@
                     </div>
                     <div class="popup-body">
                         <div class="popup-left">
-                            <img src="assets/teixeirafoto.jpeg" alt="Foto da Pessoa 3" class="modal-img">
+                            <img src="assets/tetxsFoto.jpeg" alt="Foto da Pessoa 3" class="modal-img">
                             <p class="popup-desc">
                                 Estudante do Germinare Tech - Desenvolvedor do app Khiata -
                                 Pretende seguir ramo de Análise de Dados.
@@ -561,7 +562,7 @@
             <div class="card card_1">
                 <div class="contentcard ">
                     <div class="imagem">
-                        <img src="assets/enzoresized.jpg" alt="Pessoa">
+                        <img src="assets/VetorettiFoto.jpeg" alt="Pessoa">
                     </div>
                 </div>
             </div>
@@ -580,8 +581,7 @@
                     </div>
                     <div class="popup-body">
                         <div class="popup-left">
-                            <img src="assets/enzoresized.jpg
-                                " alt="Foto da Pessoa 8" class="modal-img">
+                            <img src="assets/VetorettiFoto.jpeg" alt="Foto da Pessoa 8" class="modal-img">
                             <p class="popup-desc">
                                 Está cursando Análise de Dados no Instituto JeF e cooperando na construção do aplicativo, utilizando IAs, Dashboards, etc.
                             </p>

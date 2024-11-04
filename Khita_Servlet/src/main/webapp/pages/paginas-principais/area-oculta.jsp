@@ -1,3 +1,4 @@
+<%@ page errorPage="../paginas-mensagem/404.jsp" contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,13 +14,16 @@
 <header>
     <nav class="navbar">
         <div class="title">
-            <img
-                    src="../../assets/LogoKhiata_branco.png"
-                    alt="Logo Khiata"
-            />
+            <a href="area-oculta.html">
+                <img
+                        src="../../assets/LogoKhiata_branco.png"
+                        alt="Logo Khiata"
+                />
+            </a>
         </div>
+
             <ul class="nav-links">
-                <li class="nav-titulo" id="nav-titulo"><a href="#mensagem" onclick="showTab('tab10')">Categoria</a></li>
+                <li class="nav-titulo"><a href="#mensagem" onclick="showTab('tab10')">Categoria</a></li>
                 <br>
 
 
@@ -49,6 +53,7 @@
                     <img class="home" src="../../assets/botao-home-para-interface.png">
                 </a>
             </ul>
+            
         </div>
 
 
@@ -86,7 +91,9 @@
         <li class="content-item"><a href="#mensagem" onclick="showTab('tab11')">Mostrar categorias</a></li>
         <li class="content-item"><a href="#mensagem" onclick="showTab('tab12')">Criar categoria</a></li>
         <li class="content-item"><a href="#mensagem" onclick="showTab('tab13')">Remover categoria</a></li>
-        <img id="categoria" src="../../assets/gestao-de-pastas.png" alt="">
+        <br>
+        <br>
+        <div class="imgs"><img id="categoria" src="../../assets/gestao-de-pastas.png" alt=""></div>
 
     </div>
 
@@ -160,22 +167,24 @@
         <p>Os usuários podem ser compradores ou costureiros que realizam todas as ações do nosso aplicativo</p>
         <br>
         <li class="content-item"><a href="#mensagem" onclick="showTab('tab21')">Mostrar usuários</a></li>
-        <img src="../../assets/multidao-de-usuarios.png">
-    </div>
+        <br><br>
 
+        <div class="imgs"><img id="user" src="../../assets/silhueta-de-multiplos-usuarios.png"></div>
+    </div>
+    
     <div id="tab21" class="tab-content">
         <h2>Mostrar Usuários</h2>
         <p>Lista de todos os usuários registrados.</p>
-
+        
         <form action="mostrar-usuarios" method="post">
             <button type="submit">Mostrar usuários</button>
         </form>
-
+        
     </div>
-
+    
     <!-- -------------------------------------------------------------- -->
 
-
+    
     <!-- Endereço -->
     <!-- ------------------------------------------------------------- -->
     <div id="tab30" class="tab-content info">
@@ -185,7 +194,8 @@
         <p>Por conta do endereço ser um dado sensível é importante que tenhamos esse controle para evitar golpes.</p>
         <br>
         <li class="content-item"><a href="#mensagem" onclick="showTab('tab31')">Disponibilizar endereço</a></li>
-        <img id="endereco" src="../../assets/pino-de-localizacao.png" alt="">
+        <br><br>
+        <div class="imgs"><img id="endereco" src="../../assets/mapa.png" alt=""></div>
     </div>
 
 
@@ -219,14 +229,15 @@
     <div id="tab40" class="tab-content info">
         <br>
         <h1>Administradores</h1>
-        <p>Aqui será possível criar e visualizar os administradores que terão acesso a esta página e que poderão realiar diversas outras ações para o Khiata.</p>
+        <p>Aqui será possível criar, remover e visualizar os administradores que terão acesso a esta página e que poderão realiar diversas outras ações para o Khiata.</p>
 
         <br>
 
         <li class="content-item"><a href="#mensagem" onclick="showTab('tab41')">Mostrar administradores</a></li>
         <li class="content-item"><a href="#mensagem" onclick="showTab('tab42')">Registrar administrador(a)</a></li>
         <li class="content-item"><a href="#mensagem" onclick="showTab('tab43')">Remover administrador(a)</a></li>
-        <img  id="admin" src="../../assets/admin.png" alt="admin">
+        <br><br>
+        <div class="imgs"><img id="admin" src="../../assets/definicoes.png" alt="admin"></div>
 
     </div>
 
@@ -299,13 +310,13 @@
     <div id="tab50" class="tab-content info">
         <br>
         <h1>Preferência</h1>
-        <p>Aqui você poderá adicionar preferências a usuários específicos, indicando produtos. </p>
+        <p>Aqui você poderá adicionar e retirar preferências a usuários específicos, indicando produtos. </p>
 
         <br>
         <li class="content-item"><a href="#mensagem" onclick="showTab('tab51')">Alocar preferência em usuário</a></li>
         <li class="content-item"><a href="#mensagem" onclick="showTab('tab52')">Desalocar preferência em usuário</a></li>
-        <br>
-        <img id="pref" src="../../assets/preferencias.png" alt="">
+        <br><br>
+        <div class="imgs"><img id="pref" src="../../assets/preferencias.png" alt=""></div>
 
     </div>
 
@@ -364,7 +375,7 @@
     <div id="tab60" class="tab-content info">
         <br>
         <h1>Cursos</h1>
-        <p>Aqui você poderá visualizar e adicionar cursos para os usuários do Khiata</p>
+        <p>Aqui você poderá visualizar, adicionar e remover cursos para os usuários do Khiata</p>
 
 
         <br>
@@ -373,10 +384,10 @@
 
         <li class="content-item"><a href="#mensagem" onclick="showTab('tab62')">Registrar curso</a></li>
 
-        <li class="content-item"><a href="#mensagem" onclick="showTab('tab63')">Registrar curso</a></li>
-        <br>
+        <li class="content-item"><a href="#mensagem" onclick="showTab('tab63')">Remover curso</a></li>
+        <br><br>
 
-        <img id="curso" src="../../assets/aprendizagem-online.png" alt="">
+        <div class="imgs"><img id="curso" src="../../assets/educacao.png" alt=""></div>
 
     </div>
 
@@ -387,13 +398,13 @@
 
         <form action="mostrar-cursos" method="post">
 
-            <button type="submit">Mostrar</button>
+            <button type="submit">Mostrar cursos</button>
 
         </form>
     </div>
 
 
-    <div id="tab32" class="tab-content">
+    <div id="tab62" class="tab-content">
         <h2>Registrar curso</h2>
         <p>Formulário para criação de um curso.</p>
 
@@ -442,7 +453,7 @@
     <div id="tab70" class="tab-content info">
         <br>
         <h1>Tipos de Cursos</h1>
-        <p>Aqui você poderá visualizar e adicionar tipos de curso que serão alocados nos cursos criando playlists.</p>
+        <p>Aqui você poderá visualizar, adicionar e remover tipos de curso que serão alocados nos cursos criando playlists.</p>
         <br>
 
         <li class="content-item"><a href="#mensagem" onclick="showTab('tab71')">Mostrar tipos de curso</a></li>
@@ -450,10 +461,10 @@
         <li class="content-item"><a href="#mensagem" onclick="showTab('tab72')">Registrar tipo de curso</a></li>
 
         <li class="content-item"><a href="#mensagem" onclick="showTab('tab73')">Remover tipo de curso</a></li>
-        <br>
+        <br><br>
 
-        <div class="tipo-curso">
-            <img id="tipo-curso" src="../../assets/tipoCurso.png" alt="">
+        <div class="imgs">
+            <img id="tipo-curso" src="../../assets/computador-portatil.png" alt="">
         </div>
 
     </div>
@@ -515,10 +526,13 @@
             <br>
             <h1>Analytics</h1>
             <p>Aqui você poderá visualizar dados relevantes sobre os usuários e o funcionamento do Khiata.</p>
+            <br>
 
-            <li class="content-item"><a href="#" target="_blank">Analisar</a></li>
+            <br>
+            <li class="content-item"><a href="#" target="-blank">Analisar</a></li>
+            <br><br>
 
-            <img id="tipo-curso" src="/assets/google-analytics.png" alt="">
+            <div class="imgs"><img id="analytics" src="../../assets/analytics.png" alt=""></div>
         </div>
     <!-- ------------------------------------------------------------- -->
 

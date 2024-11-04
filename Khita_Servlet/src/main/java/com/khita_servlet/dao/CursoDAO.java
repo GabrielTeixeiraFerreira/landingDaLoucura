@@ -274,4 +274,32 @@ public class CursoDAO {
     }
 
 
+    // CursoDAO.java
+    public boolean isTipoCursoAlocado(String tipo) {
+        //Criando objeto para criar a conexao e criar os métodos do BD
+        Conexao conexao = new Conexao();
+
+        conexao.conectar(); //Abrindo conexão com BD
+
+        try {
+            conexao.pstmt = conexao.conn.prepareStatement(
+                    "SELECT COUNT(*) FROM cursos WHERE id_tipo_curso = ?"
+            ); // Preparando a instrução SQL
+
+            conexao.rs = conexao.pstmt.executeQuery();//Armazenando o Select dentro do objeto ResultSet
+
+            conexao.rs = conexao.pstmt.executeQuery();//Armazenando o Select dentro do objeto ResultSet
+
+            conexao.rs.next(); // <-- passando linha
+
+            return conexao.rs.getBoolean(1);
+
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+            return false;
+        } finally {
+            conexao.desconectar(); // Fechando conexão com o banco
+        }
+    }
+
 }

@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page errorPage="404.jsp" contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="../paginas-principais/area-oculta.html"></jsp:include>
 <html>
 <head>
